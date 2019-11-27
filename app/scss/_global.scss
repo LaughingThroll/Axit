@@ -1,0 +1,57 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: ;
+}
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+input,
+button,
+textarea,
+select {
+	border: none;
+	outline: none;
+}
+button {
+	background-color: transparent;
+	cursor: pointer;
+}
+textarea {
+	resize: none;
+}
+.container {
+	max-width: ;
+	margin: 0 auto;
+	padding: ;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.content {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
