@@ -13,7 +13,11 @@ body {
 body {
 	margin: 0;
 	padding: 0;
-	font-family: ;
+	font-family: 'OpenSans', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 24px;
+	color: #86878b;		
 }
 ul,
 li {
@@ -24,13 +28,13 @@ li {
 a {
 	display: inline-block;
 	text-decoration: none;
+	color: #fff;
 }
 input,
 button,
 textarea,
 select {
 	border: none;
-	outline: none;
 }
 button {
 	background-color: transparent;
@@ -40,9 +44,9 @@ textarea {
 	resize: none;
 }
 .container {
-	max-width: ;
+	max-width: 1170px;
 	margin: 0 auto;
-	padding: ;
+	padding: 0 15px;
 }
 .wrapper {
 	display: flex;
@@ -54,4 +58,14 @@ textarea {
 }
 .footer {
 	flex: 0 0 auto;
+}
+
+
+.link-download {
+	width: 137px;
+	padding: 10px 5px;
+	font-size: 15px;
+	font-weight: 600;
+	border: 2px solid #fff;
+	text-align: center;
 }
