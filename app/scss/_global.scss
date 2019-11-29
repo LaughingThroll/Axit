@@ -52,6 +52,8 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+	overflow-x: hidden;
+  position: relative;
 }
 .content {
 	flex: 1 0 auto;
@@ -68,4 +70,123 @@ textarea {
 	font-weight: 600;
 	border: 2px solid #fff;
 	text-align: center;
+}
+
+@keyframes rotateClose {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(190deg);
+	}
+	100% {
+		transform: rotate(180deg);
+	}
+}
+
+.mini-title {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+
+.tab-item {
+	display: none;
+	&.active-tab {
+		display: block;
+	}
+}
+
+.downloand-orange {
+	color: #fff;
+	padding: 11px 24px;
+	background-color: $orange;
+	border-radius: 3px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.future__box {
+	&-inner {
+		display: flex;
+		justify-content: space-between;
+	}
+	&-images {
+		height: 100%;
+		margin-top: 20px;
+		padding-top: 12px;
+		background-color: #ececec;
+		max-width: 455px;
+		width: 100%;
+		position: relative;
+		box-shadow: 0px 3px 20px rgba(#000, 0.3); 
+		a {
+			display: block;
+			min-height: 290px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+		}
+	}
+	.descr {
+		position: absolute;
+		top: -8px;
+		left: 4px;
+	}
+	&-circle {
+		height: 4px;
+		width: 4px;
+		display: inline-block;
+		border-radius: 50%;
+		&--red {
+			background-color: #fb5047;
+		}
+		&--yellow {
+			background-color: #f7b503;
+		}
+		&--green {
+			background-color: #1ebe34;
+		}
+	}
+}
+
+.subtitle {
+	font-size: 20px;
+	font-weight: 700;
+	padding-bottom: 28px;
+	margin-bottom: 30px;
+	position: relative;
+	color: #333;
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 65px;
+		height: 2px;
+		background-color: $orange;
+	}
+}
+
+.headline {
+	text-align: center;
+	&__title {
+		color: #212121;
+		font-size: 36px;
+		line-height: 36px;
+		font-family: Raleway, sans-serif;
+		padding-bottom: 26px;
+		margin-bottom: 25px;
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 64px;
+			height: 2px;
+			background-color: $orange;
+
+		}
+	}
 }

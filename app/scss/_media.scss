@@ -1,0 +1,47 @@
+@media (max-width: 650px) {
+  .header__btn {
+    display: block;
+    z-index: 2;
+  }
+  .header__menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: #000;
+    right: 0;
+    transform: translateX(105%);
+    transition: all .5s; 
+    width: 40%;
+    padding-right: 30px;
+    text-align: right;
+    .header__list {
+      margin-top: 65px;
+      
+    }
+    li { 
+      display: block;
+      padding-top: 10px;
+      & + li {
+        margin-left: 0px;
+      }
+    }
+  }
+  .header__menu.active {
+    transform: translateX(0);
+  }
+}
+@media (max-width: 375px) {
+  .header__menu {
+    width: 50%;
+  }
+}
+
+
+
+
+@media (min-width: 650px) {
+  .header__menu {
+    display: block !important;
+  }
+}
