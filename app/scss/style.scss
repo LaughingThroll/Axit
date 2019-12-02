@@ -555,12 +555,15 @@
       color: #333;
     } 
   }
+  .customer__info-form + .customer__info-form{
+    margin-top: 22px;
+  }
   textarea {
     height: 150px;
     padding: 10px 20px;
   }
-  input + input{
-    margin-top: 22px;
+  .customer__form-message {
+    width: 100%;
   }
   &__inner {
     display: flex;
@@ -596,4 +599,5 @@
   }
 } 
 // end footer
+
 @import 'media';
