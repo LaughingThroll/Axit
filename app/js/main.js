@@ -30,7 +30,18 @@ $(function () {
     rows: 0
   });
 
-  $('.header__btn').click(function () {
+ 
+
+  $(document).mouseup(function(e) {
+    var $target = $(e.target);
+    if ($target.closest('.header::before').length == 0) {
+        $('.header__menu').removeClass('active');
+        $('.header__btn').removeClass('active');
+        event.stopPropagation();
+    }
+  });
+  
+  $('.header__btn').on('click', function () {
     $(this).toggleClass('active');
     $('.header__menu').toggleClass('active');
   });
@@ -52,10 +63,18 @@ $(function () {
     nextArrow: '<button type="button" class="slick-btn slick-next"></button>',
     vertical: true,
     verticalSwiping: true,
-    speed: 700
+    speed: 700,
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
+        }
+      }]
   });
-
- 
 
 });
 
