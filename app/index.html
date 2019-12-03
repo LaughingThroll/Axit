@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <footer class="wrapper">
+  <div class="wrapper">
     <div class="content">
       <header class="header">
         <div class="header__top">
@@ -451,7 +451,6 @@
             </ul>
           </div>
         </div>
-
       </section>
       <section class="customer">
         <div class="container">
@@ -467,7 +466,6 @@
                 </div>
                 <div class="customer__info-form">
                   <input id="email" type="text" name="email" placeholder="Email">
-                  <!-- <span id="valid"></span> -->
                 </div>
                 <div class="customer__info-form">
                   <input type="text" name="subject" placeholder="Subject">
@@ -475,6 +473,15 @@
               </div>
               <div class="customer__form-message">
                 <textarea name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="descr" id="done">
+                <span class="mini-title"> Ваш отзыв отправлен, скоро мы его найдем;)
+                </span>
+                <button class="downloand-orange" type="button">Хорошо</button>
+              </div>
+              <div class="descr" id="fail">
+                <span class="mini-title">К сожалению на сервере произошла ошибка попробуйте еще раз:(</span>
+                <button class="downloand-orange" type="button">Печалька</button>
               </div>
             </div>
             <button class="downloand-orange" type="submit">Send Messge</button>
@@ -500,7 +507,8 @@
         </div>
       </div>
     </footer>
-  </footer>
+    <div class="overlay"></div>
+  </div>
 
 
 

@@ -126,9 +126,10 @@
   .customer__info {
     margin: 0 auto;
   }
-  .customer textarea {
+  .customer .customer__form-message {
     margin: 25px auto 0px;
     max-width: 525px;
+    width: 100%;
   }
 }
 

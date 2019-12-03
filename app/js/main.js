@@ -74,8 +74,12 @@ $(function () {
       validMessage = false,
       validMail = false;
 
-// форма отправки сообщений 
+    // форма отправки сообщений 
     form.submit(function () {
+      var userName = $(this).find(name).val(),
+          userSubject = $(this).find(subject).val(),
+          userMail = $(this).find(mail).val(),
+          userMessage = $(this).find(message).val();
       event.preventDefault();
       if (name.val() != '') {
         validName = true;
@@ -104,6 +108,7 @@ $(function () {
           mail.parent().removeClass('error');
         } else {
           mail.parent().addClass('error');
+          mail.val('');
           validMail = false;
         }
       } else {
@@ -114,17 +119,44 @@ $(function () {
 
       if (validName == true && validMail == true && validSubject == true &&
         validMessage == true) {
-        console.log('Сообщения успешно отправлено');
-        mail.parent().removeClass('error');
-        name.parent().removeClass('error');
-        subject.parent().removeClass('error');
-        message.parent().removeClass('error');
+        $.ajax({
+          url: 'send.php',
+          type: 'GET',
+          dataType: 'html',
+          data: { name: userName,
+                  mail: userMail,
+                  subject: userSubject,
+                  message: userMessage
+          },
+        })
+          .done(function (data) {
+            $('#done, .overlay').addClass('active');
+            $('.descr button').on('click', function () {
+              $('#done, .overlay').removeClass('active');
+            });
+            console.log(data);
+            mail.parent().removeClass('error');
+            name.parent().removeClass('error');
+            subject.parent().removeClass('error');
+            message.parent().removeClass('error');
+            form[0].reset();
+            
+          })
+          .fail(function () {
+            console.log('not found file');
+            $('#fail, .overlay').addClass('active');
+            $('.descr button').on('click', function () {
+              $('#fail, .overlay').removeClass('active');
+            });
+           
+          });
       } else {
-        console.log('Error');
+        console.log('error validation form');
       }
     });
   });
-  // не закончена так как нужно оптимизировать а как я пока что не знаю сильно длинный код и еще  нету AJAX но скоро будет
-
+  // не закончена так как нужно оптимизировать, а как я пока что не знаю сильно длинный код 
+  // я знаю как оптимизировать, нужен цикл смотрите  в следуйщей серии
+  // еще есть маленькая проблемка вертикальний скрол при popup как то нужно убрать но сегодня скажем НЕТТ
 });
 
