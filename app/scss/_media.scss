@@ -14,28 +14,28 @@
 }
 
 @media (max-width: 1100px) {
-  .project .tabs {
+  .about .tabs {
     flex-direction: column;
   }
-  .project .tab__menu {
+  .about .tab__menu {
     display: flex;
     max-width: 50%;
     justify-content: flex-end;
   }
-  .project .tab__menu li + li {
+  .about .tab__menu li + li {
     margin-top: 0px;
     margin-left: 1px;
   }
-  .project .tab__menu li:first-child {
+  .about .tab__menu li:first-child {
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 30px;
   }
-  .project .tab__menu li:last-child {
+  .about .tab__menu li:last-child {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 30px
   }
-  .project .tab__content {
+  .about .tab__content {
     text-align: center;
     margin-top: 35px;
   }
@@ -78,20 +78,20 @@
   .slick-dots li.slick-active button {
     background-color: $orange;
   }
-  .project {
+  .about {
     padding: 50px 0 60px;
   }
 }
 
 @media (max-width: 970px) {
-  .project .tabs {
+  .about .tabs {
     background: none !important;
     align-items: center;
   }
-  .project .tab__menu {
+  .about .tab__menu {
     max-width: 100%;
   }
-  .project .tab__content {
+  .about .tab__content {
     margin-left: 0px;
   }
   .contact__info {
@@ -134,30 +134,23 @@
 }
 
 @media(max-width: 850px) {
-  .response {
+  .review {
     padding: 60px 0px;
   }
-  .response__inner {
+  .review__inner {
     flex-direction: column;
   }
   
-  .response__item {
+  .review__item {
     margin-bottom: 20px;
     max-width: 400px;
   }
-  .response__item:nth-child(even) {
+  .review__item:nth-child(even) {
     margin-left: auto;
   } 
 }
 
 @media (max-width: 768px) {
-  .header__top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-  }
   .header__btn {
     display: block;
     z-index: 2;
@@ -187,10 +180,12 @@
   .header__menu.active {
     transform: translateX(0);
   }
+  .header__banner-wrapper {
+    top: 0;
+  }
   .header__banner-inner {
     padding: 80px 0 20px;
   }
- 
   .header__banner-item {
     min-height: 500px;
   }
@@ -198,11 +193,10 @@
     margin-left: 40px;
   }
   .advantages {
-    padding: 80px 0px 30px;
+    padding-bottom: 30px;
   }
   .advantages__inner {
     display: block;
-    margin-top: 40px;
   } 
   .advantages__item {
     margin: 0 auto;
@@ -216,7 +210,6 @@
   .advantages__images {
     margin-bottom: 20px;
   }
-  
   .box-top {
     padding: 60px 0px 80px;
   }
@@ -272,6 +265,9 @@
   .header__text {
     font-size: 14px;
   }
+  .fancybox-slide--image {
+    padding: 44px 10px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -294,13 +290,13 @@
   .footer__share a + a {
     margin-left: 15px;
   }
-  .project .mini-title {
+  .about .mini-title {
     margin-bottom: 15px;
   }
-  .project .tab__text p+p {
+  .about .tab__text p+p {
     margin: 20px 0 30px;
   }
-  .project .tab__content {
+  .about .tab__content {
     margin-top: 20px;
   }
   .future__box-images a {
@@ -310,10 +306,10 @@
   .box-bottom {
     padding: 30px 0 40px;
   }
-  .response__inner {
+  .review__inner {
     margin-top: 30px;
   }
-  .response__item {
+  .review__item {
     margin: 0 auto 20px;
   }
   .customer__inner  {

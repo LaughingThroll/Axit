@@ -16,12 +16,12 @@
 <body>
   <div class="wrapper">
     <div class="content">
-      <header class="header">
+      <header class="header" id="header">
         <div class="header__top">
           <div class="container">
             <div class="header__top-inner">
               <div class="header__logo">
-                <a href="#">
+                <a class="logo__link" href="#header">
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                     xmlns:svgjs="http://svgjs.com/svgjs" height="109.35699462890625" width="251.1199951171875">
                     <defs id="SvgjsDefs1106"></defs>
@@ -58,11 +58,11 @@
                   <a href="#">En</a>
                 </div>
                 <ul class="header__list">
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Pricing</a></li>
-                  <li><a href="#">Reviews</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="#header">Главная</a></li>
+                  <li><a href="#about">О нас</a></li>
+                  <li><a href="#project">Наши проекты</a></li>
+                  <li><a href="#review">Отзывы</a></li>
+                  <li><a href="#contact">Контакты</a></li>
                 </ul>
               </nav>
             </div>
@@ -84,17 +84,23 @@
                   <div class="header__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
                     euismod bibendum laoreet. Proin gravida dolor sit amet lacus
                     accumsan et viverra justo commodo.</div>
-                  <a class="link-download" href="#">Download</a>
+                  <a class="link-download" href="#"><span>Download</span></a>
                 </div>
                 <div class="header__form">
                   <div class="header__form-title">
                     Try Your <span>FREE</span> Trial Today
                   </div>
-                  <form action="#">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <button class="form-btn" type="submit">Get started</button>
+                  <form id="form__header" action="#">
+                    <div class="form__default">
+                      <input type="text" name="header__name" placeholder="Name">
+                    </div>
+                    <div class="form__default">
+                      <input type="text" name="header__email" placeholder="Email">
+                    </div>
+                    <div class="form__default">
+                      <input type="password" name="header__password" placeholder="Password">
+                    </div>
+                    <button class="form-btn" type="submit"><span>Get started</span></button>
                   </form>
                 </div>
               </div>
@@ -122,12 +128,67 @@
           </div>
         </div>
       </header>
+      <section class="about" id="about">
+          <div class="container">
+              <div class="headline">
+                  <div class="headline__title">WHY THIS IS AWESOME</div>
+                  <div class="headline__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+            <div class="tabs" style="background-image: url(images/content/unname-bg.png);">
+              <ul class="tab__menu">
+                <li class="tab active" data-id="1">Tab 1</li>
+                <li class="tab" data-id="2">Tab 2</li>
+                <li class="tab" data-id="3">Tab 3</li>
+              </ul>
+              <div class="tab__content">
+                <div class="tab-item active-tab" id="1">
+                  <div class="mini-title">
+                    Tabs with soft transitioning effect.
+                  </div>
+                  <div class="tab__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                      bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+                      justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
+                      penatibus et magnis dis parturient montes.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                      bibendum laoreet.</p>
+                  </div>
+                  <a class="downloand-orange" href="#">Download</a>
+                </div>
+                <div class="tab-item " id="2">
+                  <div class="mini-title">
+                    Tabs with soft transitioning effect.
+                  </div>
+                  <div class="tab__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                      bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+                      justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
+                      penatibus et magnis dis parturient montes.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                      bibendum laoreet.</p>
+                  </div>
+                  <a class="downloand-orange" href="#">Download</a>
+                </div>
+                <div class="tab-item" id="3">
+                  <div class="mini-title">
+                    Tabs with soft transitioning effect.
+                  </div>
+                  <div class="tab__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                      bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+                      justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
+                      penatibus et magnis dis parturient montes.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+                      bibendum laoreet.</p>
+                  </div>
+                  <a class="downloand-orange" href="#">Download</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       <section class="advantages">
         <div class="container">
-          <div class="headline">
-            <div class="headline__title">WHY THIS IS AWESOME</div>
-            <div class="headline__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
-          </div>
           <div class="advantages__inner">
             <div class="advantages__item">
               <div class="advantages__images icon-lightbulb-o"></div>
@@ -153,75 +214,22 @@
           </div>
         </div>
       </section>
-      <section class="project">
-        <div class="container">
-          <div class="tabs" style="background-image: url(images/content/unname-bg.png);">
-            <ul class="tab__menu">
-              <li class="tab active" data-id="1">Tab 1</li>
-              <li class="tab" data-id="2">Tab 2</li>
-              <li class="tab" data-id="3">Tab 3</li>
-            </ul>
-            <div class="tab__content">
-              <div class="tab-item active-tab" id="1">
-                <div class="mini-title">
-                  Tabs with soft transitioning effect.
-                </div>
-                <div class="tab__text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                    bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
-                    justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
-                    penatibus et magnis dis parturient montes.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                    bibendum laoreet.</p>
-                </div>
-                <a class="downloand-orange" href="#">Download</a>
-              </div>
-              <div class="tab-item " id="2">
-                <div class="mini-title">
-                  Tabs with soft transitioning effect.
-                </div>
-                <div class="tab__text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                    bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
-                    justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
-                    penatibus et magnis dis parturient montes.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                    bibendum laoreet.</p>
-                </div>
-                <a class="downloand-orange" href="#">Download</a>
-              </div>
-              <div class="tab-item" id="3">
-                <div class="mini-title">
-                  Tabs with soft transitioning effect.
-                </div>
-                <div class="tab__text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                    bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
-                    justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque
-                    penatibus et magnis dis parturient montes.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-                    bibendum laoreet.</p>
-                </div>
-                <a class="downloand-orange" href="#">Download</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="future">
-        <div class="future__box box-top">
+      <section class="project" id="project">
+        <div class="project__box box-top">
           <div class="container">
             <div class="headline">
               <div class="headline__title">Our Projects</div>
               <div class="headline__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
             </div>
-            <div class="future__box-inner">
-              <div class="future__box-images">
-                <a class="" href="#" style="background-image: url(images/content/future-img.jpg);"></a>
+            <div class="project__box-inner">
+              <div class="project__box-panel">
+                <a href="images/content/future-img.jpg" data-fancybox>
+                    <div class="project__box-images" style="background-image: url(images/content/future-img.jpg);"> </div>
+                </a>
                 <div class="descr">
-                  <span class="future__box-circle future__box-circle--red"></span>
-                  <span class="future__box-circle future__box-circle--yellow"></span>
-                  <span class="future__box-circle future__box-circle--green"></span>
+                  <span class="project__box-circle project__box-circle--red"></span>
+                  <span class="project__box-circle project__box-circle--yellow"></span>
+                  <span class="project__box-circle project__box-circle--green"></span>
                 </div>
               </div>
               <div class="box-top__info">
@@ -275,9 +283,9 @@
             </div>
           </div>
         </div>
-        <div class="future__box box-bottom">
+        <div class="project__box box-bottom">
           <div class="container">
-            <div class="future__box-inner">
+            <div class="project__box-inner">
               <div class="box-bottom__info">
                 <div class="box-top__headline">
                   <div class="subtitle">Standard Picture Section</div>
@@ -290,26 +298,30 @@
                   </div>
                 </div>
               </div>
-              <div class="future__box-images">
-                <a class="" href="#" style="background-image: url(images/content/future-img.jpg);"></a>
+              <div class="project__box-panel">
+                <a href="images/content/project-img.jpg" data-fancybox>
+                  <div class="project__box-images" style="background-image: url(images/content/project-img.jpg);"></div>
+                </a>
                 <div class="descr">
-                  <span class="future__box-circle future__box-circle--red"></span>
-                  <span class="future__box-circle future__box-circle--yellow"></span>
-                  <span class="future__box-circle future__box-circle--green"></span>
+                  <span class="project__box-circle project__box-circle--red"></span>
+                  <span class="project__box-circle project__box-circle--yellow"></span>
+                  <span class="project__box-circle project__box-circle--green"></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="future__box box-top">
+        <div class="project__box box-top">
           <div class="container">
-            <div class="future__box-inner">
-              <div class="future__box-images">
-                <a class="" href="#" style="background-image: url(images/content/future-img.jpg);"></a>
+            <div class="project__box-inner">
+              <div class="project__box-panel">
+                <a href="images/content/project-img.jpg" data-fancybox>
+                  <div class="project__box-images" style="background-image: url(images/content/project-img.jpg);"></div>
+                </a>
                 <div class="descr">
-                  <span class="future__box-circle future__box-circle--red"></span>
-                  <span class="future__box-circle future__box-circle--yellow"></span>
-                  <span class="future__box-circle future__box-circle--green"></span>
+                  <span class="project__box-circle project__box-circle--red"></span>
+                  <span class="project__box-circle project__box-circle--yellow"></span>
+                  <span class="project__box-circle project__box-circle--green"></span>
                 </div>
               </div>
               <div class="box-top__info">
@@ -364,66 +376,100 @@
           </div>
         </div>
       </section>
-      <section class="response">
+      <section class="review" id="review">
         <div class="container">
           <div class="headline">
             <div class="headline__title">WHAT OUR CUSTOMERS ARE SAYING</div>
             <div class="headline__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
           </div>
-          <div class="response__inner">
-            <div class="response__item">
-              <p class="response__text">Lorem ipsum dolor sit amet,
+          <div class="review__inner">
+            <div class="review__item">
+              <p class="review__text">Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Doloribus
                 accusamus expedita repellat similique
                 odio aspernatur ex, architecto eaque
                 quo suscipit.</p>
-              <div class="response__author">
-                <div class="response__images" style="background-image: url(images/content/user.jpg);">
+              <div class="review__author">
+                <div class="review__images" style="background-image: url(images/content/user.jpg);">
                 </div>
-                <div class="response__info">
-                  <div class="response__name mini-title">Jeremy H.</div>
-                  <div class="response__work">Manager</div>
+                <div class="review__info">
+                  <div class="review__name mini-title">Jeremy H.</div>
+                  <div class="review__work">Manager</div>
                 </div>
               </div>
             </div>
-            <div class="response__item">
-              <p class="response__text">Lorem ipsum dolor sit amet,
+            <div class="review__item">
+              <p class="review__text">Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Doloribus
                 accusamus expedita repellat similique
                 odio aspernatur ex, architecto eaque
                 quo suscipit.</p>
-              <div class="response__author">
-                <div class="response__images" style="background-image: url(images/content/user.jpg);">
+              <div class="review__author">
+                <div class="review__images" style="background-image: url(images/content/user.jpg);">
                 </div>
-                <div class="response__info">
-                  <div class="response__name mini-title">Jeremy H.</div>
-                  <div class="response__work">Manager</div>
+                <div class="review__info">
+                  <div class="review__name mini-title">Jeremy H.</div>
+                  <div class="review__work">Manager</div>
                 </div>
               </div>
             </div>
-            <div class="response__item">
-              <p class="response__text">Lorem ipsum dolor sit amet,
+            <div class="review__item">
+              <p class="review__text">Lorem ipsum dolor sit amet,
                 consectetur adipisicing elit. Doloribus
                 accusamus expedita repellat similique
                 odio aspernatur ex, architecto eaque
                 quo suscipit.</p>
-              <div class="response__author">
-                <div class="response__images" style="background-image: url(images/content/user.jpg);">
+              <div class="review__author">
+                <div class="review__images" style="background-image: url(images/content/user.jpg);">
                 </div>
-                <div class="response__info">
-                  <div class="response__name mini-title">Jeremy H.</div>
-                  <div class="response__work">Manager</div>
+                <div class="review__info">
+                  <div class="review__name mini-title">Jeremy H.</div>
+                  <div class="review__work">Manager</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section class="contact" style="background-image: url(images/content/design-bg.jpg)">
+      <section class="customer">
+          <div class="container">
+            <div class="headline">
+              <div class="headline__title">А что скажеш ты?</div>
+              <div class="headline__text">Здесь нужно оставить отзыв, желательно положительный</div>
+            </div>
+            <form id="form__customer" action="#">
+              <div class="customer__inner">
+                <div class="customer__info">
+                  <div class="form__default">
+                    <input type="text" name="customer__name" placeholder="Name">
+                  </div>
+                  <div class="form__default">
+                    <input type="text" id="email" name="customer__email" placeholder="Email">
+                  </div>
+                  <div class="form__default">
+                    <input type="text" name="customer__subject" placeholder="Subject">
+                  </div>
+                </div>
+                <div class="customer__form-message">
+                  <textarea name="customer__message" placeholder="Message"></textarea>
+                </div>
+                <div class="descr" id="done">
+                  <span class="mini-title"> Ваш отзыв отправлен, скоро мы его найдем;)
+                  </span>
+                  <button class="downloand-orange" type="button">Хорошо</button>
+                </div>
+                <div class="descr" id="fail">
+                  <span class="mini-title">К сожалению на сервере произошла ошибка попробуйте еще раз:(</span>
+                  <button class="downloand-orange" type="button">Печалька</button>
+                </div>
+              </div>
+              <button class="downloand-orange" type="submit">Send Messge</button>
+            </form>
+          </div>
+        </section>
+      <section class="contact" id="contact" style="background-image: url(images/content/design-bg.jpg)">
         <div class="contact__wrapper">
           <div class="container">
-
             <div class="headline">
               <div class="headline__title">Contact</div>
               <div class="headline__text">Use the sections you need, remove the ones you don't. Create gorgeous
@@ -452,44 +498,6 @@
           </div>
         </div>
       </section>
-      <section class="customer">
-        <div class="container">
-          <div class="headline">
-            <div class="headline__title">А что скажеш ты?</div>
-            <div class="headline__text">Здесь нужно оставить отзыв, желательно положительный</div>
-          </div>
-          <form id="form__contact" action="#">
-            <div class="customer__inner">
-              <div class="customer__info">
-                <div class="customer__info-form">
-                  <input type="text" name="name" placeholder="Name">
-                </div>
-                <div class="customer__info-form">
-                  <input id="email" type="text" name="email" placeholder="Email">
-                </div>
-                <div class="customer__info-form">
-                  <input type="text" name="subject" placeholder="Subject">
-                </div>
-              </div>
-              <div class="customer__form-message">
-                <textarea name="message" placeholder="Message"></textarea>
-              </div>
-              <div class="descr" id="done">
-                <span class="mini-title"> Ваш отзыв отправлен, скоро мы его найдем;)
-                </span>
-                <button class="downloand-orange" type="button">Хорошо</button>
-              </div>
-              <div class="descr" id="fail">
-                <span class="mini-title">К сожалению на сервере произошла ошибка попробуйте еще раз:(</span>
-                <button class="downloand-orange" type="button">Печалька</button>
-              </div>
-            </div>
-            <button class="downloand-orange" type="submit">Send Messge</button>
-          </form>
-        </div>
-      </section>
-
-
     </div>
     <footer class="footer">
       <div class="container">

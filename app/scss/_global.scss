@@ -44,6 +44,10 @@ button {
 textarea {
 	resize: none;
 }
+input:focus::placeholder,
+textarea:focus::placeholder {
+	font-size: 0;
+}
 .container {
 	max-width: 1170px;
 	margin: 0 auto;
@@ -65,25 +69,43 @@ textarea {
 
 
 .link-download {
-	width: 137px;
-	padding: 10px 5px;
 	font-size: 15px;
 	font-weight: 600;
-	border: 2px solid #fff;
 	text-align: center;
+	position: relative;
+	span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		display: inline-block;
+		padding: 10px 5px;
+		border: 2px solid #fff;
+		width: 137px;
+		transition: all .3s;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0px;
+		right: 0;
+		border: 2px solid #fff;
+		width: 137px;
+		margin: 0 auto;
+		height: 48px;
+		transition: all .3s;	
+	}
+	&:hover span {
+		padding: 14px 5px;
+	}
+	&:hover::before {
+		width: 145px;
+		left: -4px;
+	}
 }
 
-@keyframes rotateClose {
-	0% {
-		transform: rotate(0deg);
-	}
-	50% {
-		transform: rotate(190deg);
-	}
-	100% {
-		transform: rotate(180deg);
-	}
-}
 
 .mini-title {
 	font-size: 20px;
@@ -107,13 +129,13 @@ textarea {
 	font-weight: 600;
 }
 
-.future__box {
+.project__box {
 	&-inner {
 		margin-top: 70px;
 		display: flex;
 		justify-content: space-between;
 	}
-	&-images {
+	&-panel {
 		height: 100%;
 		margin-top: 20px;
 		padding-top: 12px;
@@ -124,11 +146,13 @@ textarea {
 		box-shadow: 0px 3px 20px rgba(#000, 0.3); 
 		a {
 			display: block;
+		}
+	}
+	&-images{
 			min-height: 320px;
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: center center;
-		}
 	}
 	.descr {
 		position: absolute;
@@ -194,7 +218,7 @@ textarea {
 }
 
 //start validation form
-.customer__info-form.error,
+.form__default.error,
 .customer__form-message.error {
 	box-shadow: 0px 0px 5px #e74c3c;
 	border: 0.75px solid rgba(#e74c3c, .5);
@@ -239,11 +263,11 @@ textarea {
 	}
 }
 .overlay {
-	position: absolute;
-	top: 0;
+	position: fixed;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	top: 0;
 	background-color: rgba(#000, .5);
 	transform: translateX(-200%);	
 	transition: all .3s;
@@ -253,3 +277,97 @@ textarea {
 }
 
 //end validation form 
+// start animation
+@keyframes rotateClose {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(190deg);
+	}
+	100% {
+		transform: rotate(180deg);
+	}
+}
+// start logo
+@keyframes elemone {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(48px, 0);
+	}
+	50% {
+		transform: translate(48px, 48px);
+	}
+	75% {
+		transform: translate(0px, 48px);
+	}
+}
+
+@keyframes elemtwo {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(0px, 48px);
+	}
+	50% {
+		transform: translate(-48px, 48px);
+	}
+	75% {
+		transform: translate(-48px, 0px);	
+	}
+}
+
+@keyframes elemthree {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(-48px, 0px);
+	}
+	50% {
+		transform: translate(-48px, -48px);
+	}
+	75% {
+		transform: translate(0px, -48px);	
+	}
+}
+
+@keyframes elemfour {
+	0% {
+		transform: translate(0, 0);
+	}
+	25% {
+		transform: translate(0px, -48px);
+	}
+	50% {
+		transform: translate(48px, -48px);
+	}
+	75% {
+		transform: translate(48px, 0px);	
+	}
+} 
+
+
+
+#SvgjsG1108 {
+	path:nth-child(1){
+		animation: 8s elemone both 1s infinite;
+	}
+	path:nth-child(4){
+		animation: 8s elemtwo both 1s infinite;
+	}
+	path:nth-child(3){
+		animation: 8s elemthree both 1s infinite;
+	}
+	path:nth-child(2){
+		animation: 8s elemfour both 1s infinite;
+
+	}
+
+
+}
+// end logo
+// end animation 
