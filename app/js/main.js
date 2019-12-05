@@ -103,13 +103,13 @@ $(function () {
         mail.parent().addClass('error');
         validMail = false;
       }
-      if(password.val() <== 8) {
+      if (password.val() >= 8) {
+        password.parent().removeClass('error');
+        validPassword = true;
+      } else {
         password.parent().addClass('error');
         password.attr('placeholder', 'Введите минимум 8 символов');
         validPassword = false;
-      } else {
-        password.parent().removeClass('error');
-        validPassword = true;
       }
       if (validName == true && validMail == true && validPassword == true) {
         parentForm.removeClass('error');

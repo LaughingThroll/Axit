@@ -127,6 +127,12 @@ textarea:focus::placeholder {
 	border-radius: 3px;
 	font-size: 15px;
 	font-weight: 600;
+	position: relative;
+	box-shadow: 0px 3px #e67e22;
+	&:active {
+		top: 2px;
+		box-shadow: 0px 1px #e67e22;
+	} 
 }
 
 .project__box {
@@ -218,11 +224,21 @@ textarea:focus::placeholder {
 }
 
 //start validation form
+.customer__form-message,
+.form__default {
+	transition: all .5s;
+	position: relative;
+}
+.form__default.error::before,
+.customer__form-message.error::before {
+	content: '';
+	border: 2px solid rgba(#e74c3c, .8);
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}	
 .form__default.error,
 .customer__form-message.error {
-	box-shadow: 0px 0px 5px #e74c3c;
-	border: 0.75px solid rgba(#e74c3c, .5);
-	transition: all .5s;
 	input {
 		border: 0;
 	}
@@ -230,6 +246,7 @@ textarea:focus::placeholder {
 		border: 0;
 	}
 }
+
 .customer__inner {
 	position: relative;
 }
@@ -366,8 +383,47 @@ textarea:focus::placeholder {
 		animation: 8s elemfour both 1s infinite;
 
 	}
-
-
 }
 // end logo
+
+.icon-facebook:hover {
+	color: #3b5998;
+}
+.icon-twitter:hover {
+	color: #00acee;
+	
+}
+.icon-google:hover {
+	color: #db4a39;
+}
+.icon-pinterest:hover {
+	color: #BD081C;
+}
+.icon-instagram:hover {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: 1s op both;  
+}
+@keyframes op {
+	0%{
+		background-position: 0 50%;
+		opacity: 0.7;
+	}
+	50% {
+		background-position: 100% 50%; 
+	}
+	100%{
+		background-position: 0 50%;
+		opacity: 1;
+	}
+}
+//Здесь есть небольшой казус анимация работает 
+// но как сделать плавность когда она пропадает я не знаю так как градиент сложно заанимировать 
+.icon-stumbleupon:hover {
+	color: #EB471D;
+}
+.icon-feed:hover {
+	color: #ee802f;
+}
 // end animation 

@@ -170,7 +170,7 @@
     }
   }
   &-inner {
-    padding: 100px 0 135px;
+    padding: 100px 0 60px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -249,9 +249,6 @@
       }
     } 
   }
-  .form-btn:hover ~ .header__form-title span {
-    background-color: #3d3d3d;
-  }
 .header__social {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.38);
   &-inner {
@@ -272,6 +269,7 @@
     width: 100%;
     margin-left: 45px;
     a {
+      transition: all .5s; 
       font-size: 48px;
       color: #ccc;
       & + a {
@@ -361,6 +359,15 @@
     width: 100%;
     text-align: center;
     padding: 0px 10px;
+    &:hover {
+      .advantages__images {
+        background-color: $orange;
+        &::before {
+          color: #fff;
+        }
+      }
+      
+    }
   }
   &__images {
     width: 70px;
@@ -369,6 +376,7 @@
     border: 2px solid $orange;
     border-radius: 50%;
     position: relative;
+    transition: all .5s;
     &::before {
       position: absolute;
       top: 50%;
@@ -478,6 +486,8 @@
     padding: 0 20px;
     max-width: 275px;
     width: 100%;
+    display: block;
+    color: #86878b;
   }
   &__text {
     margin-top: 0;
@@ -570,17 +580,39 @@
       font-family: 'icomoon';
       font-weight: 400;
     } 
+    &:hover {
+      a::before  {
+        width: 100%;
+      }
+    }
   }
   .icon-envelope-o::before {
     left: -10px;
+  }
+  a {
+    display: inline-block;
+    padding-bottom: 4px;
+    &::before  {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: #fff;
+      transition: all .5s;
+    }
   } 
-  a, 
-  span{
+  span {
     display: block;
+  }
+  a,
+  span{
     font-weight: 600;
     font-size: 14px;
     letter-spacing: .5px;
     margin-top: 5px;
+    position: relative;
   }
 }
 
@@ -636,6 +668,7 @@
   &__share {
     a {
       font-size: 24px;
+      transition: all .5s;
       
       & + a {
         margin-left: 30px;
