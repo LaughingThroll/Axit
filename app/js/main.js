@@ -33,6 +33,12 @@ $(function () {
     rows: 0
   });
 
+  $('.about__gallery').slick({
+    prevArrow: '<button type="button" class="slick-btn slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-btn slick-next"></button>',
+    rows: 0
+  });
+
   $('.header__btn').on('click', function () {
     $(this).toggleClass('active');
     $('.header__menu').toggleClass('active');
@@ -67,6 +73,8 @@ $(function () {
         }
       }]
   });
+
+ 
 
 
   $(function validHeaderForm(){

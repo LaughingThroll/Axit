@@ -271,6 +271,9 @@
   .fancybox-slide--image {
     padding: 44px 10px;
   }
+  .about__list li::before {
+    top: 12px;
+  }
 }
 
 @media (max-width: 425px) {

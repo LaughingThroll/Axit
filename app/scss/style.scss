@@ -126,6 +126,7 @@
     line-height: 36px;
     padding-bottom: 20px;
     margin-bottom: 35px;
+    margin-top: 0px;
     position: relative;
     &::before {
       content: '';
@@ -170,7 +171,7 @@
     }
   }
   &-inner {
-    padding: 100px 0 60px;
+    padding: 60px 0 60px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -196,6 +197,7 @@
       border-top-right-radius: 5px;
       span {
         color: $orange;
+        text-transform: uppercase;
       }
     }
     .form__default {
@@ -333,6 +335,32 @@
     background-position: center;
     background-size: cover;
   }
+  &__list {
+    text-align: left;
+    li {
+      padding-left: 30px;
+      padding-bottom: 5px;
+      line-height: 22px;
+      position: relative;
+      &::before {
+        content: '\f00c';
+        font-family: 'icomoon';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        font-size: 18px;
+        color: #333;
+        transition: all .5s;
+      }
+      &:hover::before {
+        color: $orange;
+      }
+      & + li {
+        margin-top: 5px;
+      }
+    }
+  }
   .mini-title {
     color: #000;
     margin-bottom: 35px;
@@ -342,7 +370,134 @@
       margin: 20px 0 40px;
     }
   }
+  &__content {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    &-wrapper {
+      min-height: 250px;
+      width: 100%;
+      background-color: rgba(#000, .5);  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover {
+      .about__descr {
+        opacity: 1;
+      }
+      .about__descr::after {
+        bottom: 0;
+        height: 105%;
+      }
+      .about__descr::before {
+        top: 0;
+        height: 105%;
+      }
+      .about__descr span::before {
+        width: 103%;
+        right: 0;
+      }
+      .about__descr span::after {
+        width: 103%;
+        left: 0;
+      }
+    } 
+  }
+  &__descr {
+    z-index: 1;
+    color: #fff;
+    max-width: 200px;
+    width: 100%;
+    position: relative;
+    padding: 10px 10px;
+    opacity: 0;
+    text-align: center;
+    transition: all .5s;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0;
+      width: 2px;
+      background-color: #fff;
+      transition: all .5s;
+    }
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+    span {
+      &::before,
+      &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 0;
+      background-color: #fff;
+      transition: all .5s;
+      }
+      &::before{
+        top: 0;
+        right: 0px; 
+      }
+      &::after {
+        bottom: 0;
+        left: 0px;
+      }
+    } 
+  }
+  .about__descr .mini-title {
+    margin-bottom: 15px;
+  }
+  .about__gallery .download-orange {
+    margin: 10px 0 5px;
+  }
+  &__gallery {
+    .slick-btn {
+      position: absolute;
+      top: 40%;
+      cursor: pointer;
+      &::before {
+        font-family: 'icomoon';
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        font-size: 18px;
+      }
+    }
+    .slick-prev {
+      left: 10px;
+      z-index: 1;
+    }
+    .slick-prev::before {
+      content: '\f053';
+    }
+    .slick-next {
+      right: 10px;
+    }
+    .slick-next::before {
+      content: '\f054';
+    }
+  } 
 }
+/* bootstrap hack start */
+.tab__content > .tab-item {
+  display:  block;    /* undo display:none          */
+  height: 0;         /* height:0 is also invisible */ 
+  overflow: hidden;  /* no-overflow                */
+}
+.tab__content > .active-tab{
+  height: auto;      /* let the content decide it  */
+} 
+/* bootstrap hack end */
 //end about
 //start advantages
 .advantages {

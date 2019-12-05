@@ -29,6 +29,7 @@ a {
 	display: inline-block;
 	text-decoration: none;
 	color: #fff;
+	outline: none;
 }
 input,
 button,
@@ -120,7 +121,7 @@ textarea:focus::placeholder {
 	}
 }
 
-.downloand-orange {
+.download-orange {
 	color: #fff;
 	padding: 11px 24px;
 	background-color: $orange;
