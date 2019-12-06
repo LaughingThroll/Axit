@@ -325,7 +325,7 @@
     margin-left: 100px;
   }
   .tab-item {
-    padding: 5px 0 20px;
+    padding: 5px 0 0px;
     max-width: 480px;
     width: 100%;
   }
@@ -471,6 +471,10 @@
         transform: translateX(-50%);
         color: #fff;
         font-size: 18px;
+        transition: all .5s;
+      }
+      &:hover::before {
+        color: $orange;
       }
     }
     .slick-prev {
@@ -486,17 +490,18 @@
     .slick-next::before {
       content: '\f054';
     }
-  } 
+  }
 }
 /* bootstrap hack start */
-.tab__content > .tab-item {
-  display:  block;    /* undo display:none          */
-  height: 0;         /* height:0 is also invisible */ 
-  overflow: hidden;  /* no-overflow                */
+.tab__content  .tab-item {
+  display: block; 
+  height: 0;         
+  overflow: hidden;  
 }
-.tab__content > .active-tab{
-  height: auto;      /* let the content decide it  */
+.tab__content .active-tab{
+  height: auto;    
 } 
+
 /* bootstrap hack end */
 //end about
 //start advantages
@@ -549,7 +554,7 @@
 //end advantages
 //start project
 .box-top {
-  padding: 100px 0px 135px;
+  padding: 100px 0px 90px;
   &__info {
     max-width: 445px;
     width: 100%;
@@ -600,7 +605,7 @@
     }
   }
   .slick-next {
-    top: 109px;
+    top: 108px;
     &::before {
       content: '\f0ed';
     }
@@ -639,7 +644,8 @@
   }
   &__item {
     padding: 0 20px;
-    max-width: 275px;
+    max-width: 280px;
+    
     width: 100%;
     display: block;
     color: #86878b;
@@ -648,25 +654,15 @@
     margin-top: 0;
     border-radius: 5px;
     padding: 20px 10px;
+    height: 170px;
+    overflow: hidden;
     background-color: $bg;
     position: relative;
     font-style: italic;
     margin-bottom: 25px;
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 25px;
-      width: 0;
-	    height: 0;
-	    border-left: 10px solid transparent;
-	    border-right: 10px solid transparent;
-	    border-top: 15px solid $bg;
-    }
   }
-  &__author {
-    display: flex;
-    align-items: center;
+  &__info {
+    margin-top: 10px;
   }
   &__images {
     width: 72px;

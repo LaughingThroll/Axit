@@ -1,11 +1,8 @@
 $(function () {
-
-
   $('.header__lang a').click(function () {
     $('.header__lang a').removeClass('active');
     $(this).toggleClass('active');
   });
-
   // strat 
   $(document).mouseup(function (e) {
     var $target = $(e.target);
@@ -15,13 +12,13 @@ $(function () {
     }
     event.stopPropagation();
   });
-  // end 
+  // end xmlns:svgjs="http://svgjs.com/svgjs"
   // функция которая убирает меню при клике вне ее, но есть один баг то что при клике на .header__top меню не убирается, а если сделать чтобы убиралось то не работает .header__btn что делать я не знаю подскажеш а??   
-  $('a[href*="#"').on('click', function(){
+  $('a[href*="#"').on('click', function () {
     event.preventDefault();
     var target = $(this).attr('href');
     var top = $(target).offset().top;
-    $('html, body').animate({scrollTop: top}, 1000);
+    $('html, body').animate({ scrollTop: top }, 1000);
   });
 
   $('.header__banner-slider').slick({
@@ -38,12 +35,10 @@ $(function () {
     nextArrow: '<button type="button" class="slick-btn slick-next"></button>',
     rows: 0
   });
-
   $('.header__btn').on('click', function () {
     $(this).toggleClass('active');
     $('.header__menu').toggleClass('active');
   });
-
   $('.tabs .tab').on('click', function (event) {
     var id = $(this).attr('data-id');
     $('.tabs').find('.tab-item').removeClass('active-tab').hide();
@@ -74,23 +69,20 @@ $(function () {
       }]
   });
 
- 
-
-
-  $(function validHeaderForm(){
+  $(function validHeaderForm() {
     var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1-6}\.)?[a-z]{2,6}$/i,
-        formHeader = $('#form__header'),
-        name = $('#form__header input[name="header__name"]'),
-        mail = $('#form__header input[name="header__email"]'),
-        parentForm = $('#form__header .form__default'),
-        password = $('input[name="header__password"]'),
-        validName = false,
-        validMail = false,
-        validPassword = false;
+      formHeader = $('#form__header'),
+      name = $('#form__header input[name="header__name"]'),
+      mail = $('#form__header input[name="header__email"]'),
+      parentForm = $('#form__header .form__default'),
+      password = $('input[name="header__password"]'),
+      validName = false,
+      validMail = false,
+      validPassword = false;
 
-    formHeader.submit(function(){
+    formHeader.submit(function () {
       event.preventDefault();
-      if (name.val() != ''){
+      if (name.val() != '') {
         name.parent().removeClass('error');
         validName = true;
       } else {
@@ -125,8 +117,8 @@ $(function () {
       } else {
         console.log('error validation form');
       }
-    });    
-  });   
+    });
+  });
 
   $(function validFormCustomer() {
     var pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1-6}\.)?[a-z]{2,6}$/i,
@@ -218,9 +210,6 @@ $(function () {
       }
     });
   });
-
- 
-
   // не закончена так как нужно оптимизировать, а как я пока что не знаю сильно длинный код
   // и можно ли вообще и нужно ли???
   // еще есть маленькая проблемка вертикальний скрол при popup как то нужно убрать но сегодня скажем НЕТТ

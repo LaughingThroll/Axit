@@ -258,7 +258,8 @@
   }
   .contact__info-line + .contact__info-line {
     margin-bottom: 20px; 
-  } 
+  }
+
 }
 
 @media (max-width: 500px){
@@ -273,6 +274,9 @@
   }
   .about__list li::before {
     top: 12px;
+  }
+  .about .tab-item {
+    max-width: 415px;
   }
 }
 
@@ -320,6 +324,9 @@
   }
   .customer__inner  {
     margin: 25px 0px 30px;
+  }
+  .about .tab-item {
+    max-width: 300px;
   }
 }
 @media (max-width: 375px) {
