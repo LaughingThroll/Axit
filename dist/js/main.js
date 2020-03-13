@@ -79,9 +79,10 @@ $(function () {
       validName = false,
       validMail = false,
       validPassword = false;
-
+      
     formHeader.submit(function () {
       event.preventDefault();
+     
       if (name.val() != '') {
         name.parent().removeClass('error');
         validName = true;
@@ -103,7 +104,7 @@ $(function () {
         mail.parent().addClass('error');
         validMail = false;
       }
-      if (password.val() >= 8) {
+      if (password.val().length >= 8) {
         password.parent().removeClass('error');
         validPassword = true;
       } else {
@@ -177,8 +178,8 @@ $(function () {
 
       if (validName == true && validMail == true && validSubject == true && validMessage == true) {
         $.ajax({
-          url: 'send.php',
-          type: 'GET',
+          url: 'sen.php',
+          type: 'POST',
           dataType: 'html',
           data: {
             name: userName,
@@ -195,19 +196,19 @@ $(function () {
             $('.overlay').click(function(){
               $('#done, .overlay').removeClass('active');
             });
-            console.log(data);
+           
             parentForm.removeClass('error');
             formCustomer[0].reset();
 
           })
           .fail(function () {
-            console.log('not found file');
+            
             $('#fail, .overlay').addClass('active');
             $('.descr .circle').on('click', function () {
               $('#fail, .overlay').removeClass('active');
             });
             $('.overlay').click(function(){
-              $('#done, .overlay').removeClass('active');
+              $('#fail, .overlay').removeClass('active');
             });
           });
       } else {
@@ -216,7 +217,6 @@ $(function () {
     });
   });
   // не закончена так как нужно оптимизировать, а как я пока что не знаю сильно длинный код
-  // и можно ли вообще и нужно ли???
   // еще есть маленькая проблемка вертикальний скрол при popup как то нужно убрать но сегодня скажем НЕТТ
   // после многочисленных попыток я понял что скролл взять очень сложно и решил нужно подождать и получить больше знаний
 });
