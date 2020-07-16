@@ -4,21 +4,23 @@ $(function () {
     $(this).toggleClass('active');
   });
   // strat 
-  $(document).mouseup(function (e) {
-    var $target = $(e.target);
-    if (!$target.closest('.header__top').length) {
-      $('.header__menu').removeClass('active');
-      $('.header__btn').removeClass('active');
+  $(window).on('click', function(event) {
+    if ($(event.target).hasClass('header__menu') || 
+        $(event.target).parent().hasClass('header__btn')) {
+          event.stopPropagation()
+    } else {
+      $('.header__menu').removeClass('active')
+      $('.header__btn').removeClass('active')
     }
-    event.stopPropagation();
   });
   // end 
-  // функция которая убирает меню при клике вне ее, но есть один баг то что при клике на .header__top меню не убирается, а если сделать чтобы убиралось то не работает .header__btn что делать я не знаю подскажеш а??   
   $('a[href*="#"').on('click', function () {
     event.preventDefault();
-    var target = $(this).attr('href');
-    var top = $(target).offset().top;
-    $('html, body').animate({ scrollTop: top }, 1000);
+    let target = $(this).attr('href')
+    if (target !== '#') {
+      let top = $(target).offset().top
+      $('html, body').animate({ scrollTop: top }, 1000);
+    }    
   });
 
   $('.header__banner-slider').slick({
@@ -93,6 +95,7 @@ $(function () {
       if (mail.val() != '') {
         if (mail.val().search(pattern) == 0) {
           mail.parent().removeClass('error');
+          mail.attr('placeholder', 'Введите e-mail');
           validMail = true;
         } else {
           mail.parent().addClass('error');
@@ -106,6 +109,7 @@ $(function () {
       }
       if (password.val().length >= 8) {
         password.parent().removeClass('error');
+        password.attr('placeholder', 'Пароль');
         validPassword = true;
       } else {
         password.parent().addClass('error');
@@ -163,6 +167,7 @@ $(function () {
       }
       if (mail.val() != '') {
         if (mail.val().search(pattern) == 0) {
+          mail.attr('placeholder', 'Введите e-mail');
           validMail = true;
           mail.parent().removeClass('error');
         } else {
@@ -216,8 +221,5 @@ $(function () {
       }
     });
   });
-  // не закончена так как нужно оптимизировать, а как я пока что не знаю сильно длинный код
-  // еще есть маленькая проблемка вертикальний скрол при popup как то нужно убрать но сегодня скажем НЕТТ
-  // после многочисленных попыток я понял что скролл взять очень сложно и решил нужно подождать и получить больше знаний
 });
 

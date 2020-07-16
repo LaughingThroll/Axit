@@ -51,7 +51,9 @@ gulp.task('script', function(){
 
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: 'fixhouse'
+        server: {
+            baseDir: "app/"
+          }
     });
 });
 
